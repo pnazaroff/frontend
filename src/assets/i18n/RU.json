@@ -1,0 +1,149 @@
+{
+  "header": {
+    "home": "Домашняя страница",
+    "history": "История",
+    "bonuses": "Бонусы",
+    "statistics": "Статистика",
+    "loginAs": "Вы вошли как:",
+    "signOut": "Выход"
+  },
+  "popup": {
+    "go": "Перейти",
+    "detail": "Детали"
+  },
+  "notFound": "Не найдено",
+  "addBonus": {
+    "addBonusBtn": "Добавить бонус",
+    "goBack": "Назад",
+    "saveBonus": "Сохранить",
+    "form" : {
+      "vendorName": "Имя вендора",
+      "vendorEmail": "Введите адрес ел. почты вендора",
+      "phone": "Номер телефона",
+      "bonusType": "Тип бонуса",
+      "bonusDescription": "Описание бонуса",
+      "bonusTitle": "Название бонуса",
+      "bonusTags": "Теги бонуса",
+      "bonusTagPlaceholder": "Введите новый тег...",
+      "bonusAddress": "Адрес бонуса",
+      "bonusAddressPlaceholder": "Введите страну, город, улицу, номер",
+      "bonusDateRange": "Введите диапазон даты бонуса",
+      "saveNewVendorBtn": "Сохранить новый вендор"
+    },
+    "searcher": "Фильтр по имени вендора",
+    "notification": {
+      "saveBonusError": {
+        "title": "Ошибка сохранения",
+        "message": "Возникли проблемы с сохранением бонуса!"
+      },
+      "saveBonusSuccess": {
+        "title": "Операция успешна!",
+        "message": "Сохранен новый бонус!"
+      },
+      "getAddress": {
+        "title": "Ошибка ответа",
+        "message": "Возникли проблемы с ответом сервера!"
+      },
+      "getVendors": {
+        "title": "Ошибка ответа",
+        "message": "Возникли проблемы с ответом сервера!"
+      },
+      "saveVendorError": {
+        "title": "Ошибка сохранения",
+        "message": "Возникли проблемы с сохранением вендора!"
+      },
+      "saveVendorSuccess": {
+        "title": "Операция успешна!",
+        "message": "Сохранен новый вендор!"
+      }
+    }
+  },
+  "history": {
+    "notification": {
+      "applySuccess" : {
+        "title": "Операция успешна!",
+        "message": "Ваша заявка успешно отправлена!"
+      },
+      "applyError" : {
+        "title": "Ошибка ответа!",
+        "message": "Возникли проблемы с сохранением заявки!"
+      }
+    }
+  },
+  "loginPage": {
+    "login": "Введите логин пользователя",
+    "password": "Введите пароль",
+    "signIn": "Войти"
+  },
+  "statistics": {
+    "filter": "Быстрый поиск",
+    "vendor": "Компания",
+    "bonus": "Бонус",
+    "dateStart": "Начало действия",
+    "dateEnd": "Конец действия",
+    "dateAdd": "Дата добавления",
+    "rating": "Рейтинг",
+    "visits": "Кол-во визитов",
+    "city": "Город",
+    "country": "Страна",
+    "type": "Тип бонуса",
+    "isActive": "Статус",
+    "filters": "Фильтры",
+    "clear": "Очистить",
+    "apply": "Применить"
+  },
+  "home": {
+    "pick": {
+      "labelFilter": "Фильтр",
+      "labelSorting": "Сортировка",
+      "sorting": {
+        "byTitle": "По заголовку",
+        "byCompany": "По имени компании",
+        "byDateStart": "По дате начала действия",
+        "byDateEnd": "По дате окончания действия",
+        "byRating": "По рейтингу",
+        "byType": "По типу"
+      }
+    }
+  },
+  "rateForm": {
+    "notification": {
+      "success": {
+        "title": "Отправлено",
+        "message": "Ваша оценка добавлена"
+      }
+    }
+  },
+  "location": {
+    "notification": {
+      "error": {
+        "title": "Ошибка",
+        "message": "Геолокация недоступна"
+      }
+    }
+  },
+  "map": {
+    "notification": {
+      "error": {
+        "title": "Ошибка",
+        "message": "Бонус недоступен"
+      }
+    }
+  },
+  "bonusList": {
+    "notification": {
+      "getBonusesError": {
+        "title": "Ошибка",
+        "message": "Ошибка при получении бонусов"
+      },
+      "getBonusesFromMapError": {
+        "title": "Ошибка",
+        "message": "Ошибка при получения бонуса с карты"
+      },
+      "getNoBonuses": {
+        "title": "Извините!",
+        "message": "По этим фильтрам бонусов пока нет"
+      }
+    }
+  }
+}

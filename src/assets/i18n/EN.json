@@ -1,0 +1,149 @@
+{
+  "header": {
+    "home": "Home",
+    "history": "History",
+    "bonuses": "Bonuses",
+    "statistics": "Statistics",
+    "loginAs": "You're login as:",
+    "signOut": "Sign out"
+  },
+  "popup": {
+    "go": "Go",
+    "detail": "Detail"
+  },
+  "notFound": "Not found",
+  "addBonus": {
+    "addBonusBtn": "Add bonus",
+    "goBack": "Back",
+    "saveBonus": "Save",
+    "form" : {
+      "vendorName": "Vendor name",
+      "vendorEmail": "Enter vendor email",
+      "phone": "Phone",
+      "bonusType": "Bonus type",
+      "bonusDescription": "Bonus description",
+      "bonusTitle": "Bonus title",
+      "bonusTags": "Bonus tags",
+      "bonusTagPlaceholder": "Enter new tag...",
+      "bonusAddress": "Bonus Address",
+      "bonusAddressPlaceholder": "Enter country, city, town, number",
+      "bonusDateRange": "Enter a bonus date range",
+      "saveNewVendorBtn": "Save new vendor"
+    },
+    "searcher": "Filter by vendor name",
+    "notification": {
+      "saveBonusError": {
+        "title": "Save error",
+        "message": "Some problems with saving bonus!"
+      },
+      "saveBonusSuccess": {
+        "title": "Successfully!",
+        "message": "A new bonus has been saved!"
+      },
+      "getAddress": {
+        "title": "Response error",
+        "message": "Some problems with getting address!"
+      },
+      "getVendors": {
+        "title": "Response error",
+        "message": "Some problems with getting vendors!"
+      },
+      "saveVendorError": {
+        "title": "Save error",
+        "message": "Some problems with saving vendor!"
+      },
+      "saveVendorSuccess": {
+        "title": "Successfully!",
+        "message": "A new vendor has been saved!"
+      }
+    }
+  },
+  "history": {
+    "notification": {
+      "applySuccess" : {
+        "title": "Successfully!",
+        "message": "Your application has been successfully sent!"
+      },
+      "applyError" : {
+        "title": "Response error!",
+        "message": "Some problem with your apply!"
+      }
+    }
+  },
+  "loginPage": {
+    "login": "Enter your login",
+    "password": "Enter your password",
+    "signIn": "Sign in"
+  },
+  "statistics": {
+    "filter": "Quick search",
+    "vendor": "Vendor",
+    "bonus": "Bonus",
+    "dateStart": "Start",
+    "dateEnd": "End",
+    "dateAdd": "Add date",
+    "rating": "Rating",
+    "visits": "Visits",
+    "city": "City",
+    "country": "Country",
+    "type": "Bonus type",
+    "isActive": "Is active",
+    "filters": "Filters",
+    "clear": "Clear filters",
+    "apply": "Apply filters"
+  },
+  "home": {
+    "pick": {
+      "labelFilter": "Filter",
+      "labelSorting": "Sorting",
+      "sorting": {
+        "byTitle": "Alphabetically by title",
+        "byCompany": "Alphabetically by company",
+        "byDateStart": "By bonus date start",
+        "byDateEnd": "By bonus date end",
+        "byRating": "By rating",
+        "byType": "By type"
+      }
+    }
+  },
+  "rateForm": {
+    "notification": {
+      "success": {
+        "title": "Rated",
+        "message": "Your review has been added"
+      }
+    }
+  },
+  "location": {
+    "notification": {
+      "error": {
+        "title": "Error",
+        "message": "Geolocation not available"
+      }
+    }
+  },
+  "map": {
+    "notification": {
+      "error": {
+        "title": "Error",
+        "message": "Bonus not available"
+      }
+    }
+  },
+  "bonusList": {
+    "notification": {
+      "getBonusesError": {
+        "title": "Error",
+        "message": "Some problems with getting bonuses"
+      },
+      "getBonusesFromMapError": {
+        "title": "Error",
+        "message": "Some problems with getting bonus from the map"
+      },
+      "getNoBonuses": {
+        "title": "Sorry!",
+        "message": "There are no bonuses for these filters yet"
+      }
+    }
+  }
+}

@@ -1,0 +1,15 @@
+.filter-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  overflow-y: hidden;
+  height: 220px;
+}
+
+.filter-inputs {
+  width: 90%;
+  &:first-child {
+    margin-top: 20px;
+  }
+}

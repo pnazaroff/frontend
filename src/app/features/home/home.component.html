@@ -1,0 +1,15 @@
+<section class="home">
+  <section class="left">
+    <app-pick class="pick-container"></app-pick>
+    <app-bonus-list-container
+      class="bonus-list"
+      [bonusButtonLabel]="bonusButtonLabel"
+      (bonusButtonClickedEvent)="openApplyForm($event)"
+    >
+    </app-bonus-list-container>
+  </section>
+  <section class="right">
+    <app-map-container class="map"></app-map-container>
+  </section>
+  <router-outlet></router-outlet>
+</section>

@@ -1,0 +1,55 @@
+<header>
+  <nav class="nav-menu">
+    <section class="logo" [routerLink]="['/home']">
+      <img class="logo-img" src="assets/images/logo.png" alt="exadel logo" />
+      <span class="logo-text">exadel bonus+</span>
+    </section>
+    <div class="language-switcher" [class.isLogout]="!ifShowMenuButtons">
+      <button class="language-switcher-button" mat-mini-fab appLanguageSwitcher color="primary">
+        {{ language }}
+      </button>
+    </div>
+    <ng-container *ngIf="ifShowMenuButtons">
+      <section class="menu-container" [ngClass]="{ hide: isMenuHide }">
+        <ul class="menu" appCloseMenu (clickMenuItem)="toggleMenu()">
+          <li>
+            <span class="login-as-label">{{ 'header.loginAs' | translate }}</span>
+            <span class="login-as-text">{{ user?.first_name }} {{ user?.last_name }} </span>
+          </li>
+          <li class="menu-item">
+            <a [routerLink]="['/home']" [routerLinkActive]="'active'">{{
+              'header.home' | translate
+            }}</a>
+          </li>
+          <li class="menu-item">
+            <a [routerLink]="['history']" [routerLinkActive]="'active'">{{
+              'header.history' | translate
+            }}</a>
+          </li>
+          <li class="menu-item">
+            <a [routerLink]="['bonuses']" [routerLinkActive]="'active'">{{
+              'header.bonuses' | translate
+            }}</a>
+          </li>
+          <li class="menu-item">
+            <a [routerLink]="['statistics']" [routerLinkActive]="'active'">{{
+              'header.statistics' | translate
+            }}</a>
+          </li>
+          <li class="menu-item">
+            <a (click)="logout()" class="sing-out">{{ 'header.signOut' | translate }}</a>
+          </li>
+        </ul>
+      </section>
+      <button
+        mat-icon-button
+        aria-label="Menu icon"
+        class="menu-icon"
+        [ngClass]="{ fixed: !isMenuHide }"
+        (click)="this.toggleMenu()"
+      >
+        <mat-icon>menu</mat-icon>
+      </button>
+    </ng-container>
+  </nav>
+</header>

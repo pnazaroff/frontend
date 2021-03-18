@@ -1,0 +1,150 @@
+<div class="container">
+  <div class="form-btn-back-container">
+    <button
+      *ngIf="newBonus"
+      class="form-btn-back"
+      (click)="goBack()"
+      mat-stroked-button
+      color="primary"
+    >
+      &#8656; {{ 'addBonus.goBack' | translate }}
+    </button>
+  </div>
+  <form class="add-bonus-form" (ngSubmit)="onSubmit()" [formGroup]="myForm">
+    <mat-form-field [formGroup]="vendorInfo" class="add-bonus-input" appearance="fill">
+      <mat-label>{{ 'addBonus.form.vendorName' | translate }}</mat-label>
+      <input
+        class="add-bonus-input"
+        type="text"
+        matInput
+        formControlName="name"
+        [matAutocomplete]="auto"
+        (ngModelChange)="onVendorNameChange($event)"
+        [readonly]="readonly"
+      />
+      <mat-autocomplete #auto="matAutocomplete" [displayWith]="displayVendors">
+        <mat-option *ngFor="let vendor of filteredVendors | async" [value]="vendor">
+          {{ vendor?.name }}
+        </mat-option>
+      </mat-autocomplete>
+      <button type="button" (click)="onOpenEmailInput()" class="new-vendor-btn">&#43;</button>
+    </mat-form-field>
+    <mat-form-field
+      [class.hidden]="!vendorEmailVisible"
+      [formGroup]="vendorInfo"
+      class="add-bonus-input"
+      appearance="fill"
+    >
+      <mat-label>{{ 'addBonus.form.vendorEmail' | translate }}</mat-label>
+      <input
+        matInput
+        formControlName="email"
+        autocomplete="off"
+        placeholder="pat@example.com"
+        [readonly]="readonly"
+      />
+    </mat-form-field>
+    <button
+      [class.hidden]="!visibleBtnForSaveNewVendor"
+      class="vendor-info-btn"
+      [disabled]="vendorInfo.invalid"
+      mat-flat-button
+      color="primary"
+      type="button"
+      (click)="onSaveNewVendor()"
+    >
+      {{ 'addBonus.form.saveNewVendorBtn' | translate }}
+    </button>
+    <mat-form-field class="add-bonus-input" appearance="fill" aria-autocomplete="off">
+      <mat-label>{{ 'addBonus.form.phone' | translate }}</mat-label>
+      <input
+        matInput
+        placeholder="+00(000) 000-00-00"
+        formControlName="phone"
+        mask="+00(000) 000-00-00"
+      />
+    </mat-form-field>
+    <mat-form-field class="add-bonus-input" appearance="fill">
+      <mat-label>{{ 'addBonus.form.bonusType' | translate }}</mat-label>
+      <mat-select formControlName="bonusType" name="food">
+        <mat-option *ngFor="let type of types" [value]="type">
+          {{ type }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field class="add-bonus-input" appearance="fill">
+      <mat-label>{{ 'addBonus.form.bonusDescription' | translate }}</mat-label>
+      <textarea matInput formControlName="bonusDescription"></textarea>
+    </mat-form-field>
+    <mat-form-field class="add-bonus-input" appearance="fill">
+      <mat-label>{{ 'addBonus.form.bonusTitle' | translate }}</mat-label>
+      <input autocomplete="off" matInput type="text" formControlName="bonusTitle" maxlength="25" />
+    </mat-form-field>
+    <mat-form-field class="add-bonus-input" appearance="fill">
+      <mat-label>{{ 'addBonus.form.bonusTags' | translate }}</mat-label>
+      <mat-chip-list #chipList aria-label="Tag selection">
+        <mat-chip
+          *ngFor="let tag of bonusTags"
+          [selectable]="selectable"
+          [removable]="removable"
+          (removed)="onRemoveTag(tag)"
+        >
+          {{ tag.name }}
+          <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
+        </mat-chip>
+        <input
+          formControlName="bonusTags"
+          placeholder="{{ 'addBonus.form.bonusTagPlaceholder' | translate }}"
+          [matChipInputFor]="chipList"
+          [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+          [matChipInputAddOnBlur]="addOnBlur"
+          (matChipInputTokenEnd)="onAddTag($event)"
+        />
+      </mat-chip-list>
+    </mat-form-field>
+    <mat-form-field class="add-bonus-input" appearance="fill">
+      <mat-label>{{ 'addBonus.form.bonusAddress' | translate }}</mat-label>
+      <mat-chip-list #addressList aria-label="Tag selection">
+        <mat-chip
+          class="add-bonus-input--chip"
+          *ngFor="let location of locations"
+          [selectable]="selectable"
+          [removable]="removable"
+          (removed)="onRemoveAddress(location)"
+        >
+          {{ location?.country }}, {{ location?.city }}, {{ location?.address }}
+          <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
+        </mat-chip>
+        <input
+          formControlName="bonusAddress"
+          [matChipInputFor]="addressList"
+          [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+          [matChipInputAddOnBlur]="addOnBlur"
+          (matChipInputTokenEnd)="onAddAddressValue($event)"
+          placeholder="{{ 'addBonus.form.bonusAddressPlaceholder' | translate }}"
+          autocomplete="off"
+        />
+      </mat-chip-list>
+    </mat-form-field>
+    <mat-form-field class="add-bonus-input" appearance="fill">
+      <mat-label>{{ 'addBonus.form.bonusDateRange' | translate }}</mat-label>
+      <mat-date-range-input [formGroup]="myForm" [rangePicker]="picker">
+        <input readonly="true" matStartDate formControlName="start" placeholder="Start date" />
+        <input readonly="true" matEndDate formControlName="end" placeholder="End date" />
+      </mat-date-range-input>
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-date-range-picker #picker></mat-date-range-picker>
+    </mat-form-field>
+    <div class="add-bonus-btn-container">
+      <button
+        type="submit"
+        [disabled]="myForm.invalid"
+        class="add-bonus-button"
+        mat-flat-button
+        color="primary"
+      >
+        {{ 'addBonus.saveBonus' | translate }}
+      </button>
+    </div>
+  </form>
+</div>
